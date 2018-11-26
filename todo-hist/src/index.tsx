@@ -89,7 +89,7 @@ const ControlButton = ({ name, onclick }: { name: string, onclick: () => void })
     </span>
 );
 
-const view = ui.view(todo, () => (
+const view = () => (
     <div>
         <h1>Todo</h1>
         <p>
@@ -123,6 +123,6 @@ const view = ui.view(todo, () => (
             <ul> {todo.FilteredItems.map((t) => <TodoItem item={t}/>)} </ul>
         </p>
   </div>
-));
+);
 
-ui.init(document.body, view);
+ui.init(document.body, view, todo);

@@ -74,7 +74,7 @@ const FilterButton = ({ filter }: { filter: FilterName }) => (
   </span>
 );
 
-const view = ui.view(todo, () => (
+const view = () => (
     <div>
         <h1>Todo</h1>
         <p>{todo.UnusedFilters.map((key) => <FilterButton filter={key}/>)}</p>
@@ -94,6 +94,6 @@ const view = ui.view(todo, () => (
             <ul> {todo.Filtered.map((t) => <TodoItem item={t}/>)} </ul>
         </p>
   </div>
-));
+);
 
-ui.init(document.body, view);
+ui.init(document.body, view, todo);
