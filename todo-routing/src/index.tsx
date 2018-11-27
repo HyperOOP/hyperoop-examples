@@ -35,7 +35,7 @@ class Todo extends ui.Actions<ITodoState> {
             .filter((key) => key !== todo.State.filter);
     }
 
-    public onPathChange(data: any) {
+    public onLocationChange(data: any) {
         const d = `${data}`;
         if (d in Filters) {
             this.State.filter = d as FilterName;
