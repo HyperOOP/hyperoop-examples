@@ -35,9 +35,12 @@ class Todo extends ui.Actions<ITodoState> {
             .filter((key) => key !== todo.State.filter);
     }
 
-    public onPathChange(filter: FilterName) {
-        if (filter === "All" || filter === "Todo" || filter === "Done") {
-            this.State.filter = filter;
+    public onPathChange(data: any) {
+        const d = `${data}`;
+        if (d in Filters) {
+            this.State.filter = d as FilterName;
+        } else {
+            this.State.filter = "All";
         }
     }
 
@@ -110,5 +113,4 @@ const view = () => (
   </div>
 );
 
-todo.Router.go("/#All");
 ui.init(document.body, view, todo);    
