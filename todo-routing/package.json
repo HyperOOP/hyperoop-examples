@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "hyperoop": "^0.2.2",
-    "hyperoop-router": "^0.1.5"
+    "hyperoop-router": "^0.1.6"
   }
 }

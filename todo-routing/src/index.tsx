@@ -39,8 +39,11 @@ class Todo extends ui.Actions<ITodoState> {
         const d = `${data}`;
         if (d in Filters) {
             this.State.filter = d as FilterName;
+            console.log("A");
         } else {
             this.State.filter = "All";
+            this.Router.go({ pathname: "/", state: "All" });
+            console.log("B");
         }
     }
 
@@ -84,7 +87,7 @@ const TodoItem = ({ item }: { item: Item }) => (
 
 const FilterButton = ({ filter }: { filter: FilterName }) => (
     <span>
-        <Link to = {{hash: filter, state: filter}}>
+        <Link to = {{hash: filter === "All" ? "#" : filter, state: filter}}>
             {filter}
         </Link>
         {" "}
@@ -113,4 +116,5 @@ const view = () => (
   </div>
 );
 
+todo.Router.go({ hash: "#", state: "All" });
 ui.init(document.body, view, todo);    
