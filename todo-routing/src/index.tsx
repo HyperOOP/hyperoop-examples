@@ -1,5 +1,5 @@
 import * as ui from "hyperoop";
-import { Router, Link, JSXFactory } from "hyperoop-router";
+import { Router, Link } from "hyperoop-router";
 
 import "./index.scss";
 
@@ -23,7 +23,7 @@ class Todo extends ui.Actions<ITodoState> {
 
     constructor(start: ITodoState) {
         super(start);
-        this.Router = new Router(this, ui.h as JSXFactory); // TODO: fix types
+        this.Router = new Router(this, ui.h);
     }
    
     get Filtered(): Item[] {
