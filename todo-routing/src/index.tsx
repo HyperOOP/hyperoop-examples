@@ -39,11 +39,9 @@ class Todo extends ui.Actions<ITodoState> {
         const d = `${data}`;
         if (d in Filters) {
             this.State.filter = d as FilterName;
-            console.log("A");
         } else {
             this.State.filter = "All";
             this.Router.go({ pathname: "/", state: "All" });
-            console.log("B");
         }
     }
 
