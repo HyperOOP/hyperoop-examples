@@ -20,6 +20,6 @@
     "typescript": "^3.0.1"
   },
   "dependencies": {
-    "hyperoop": "^0.3.1"
+    "hyperoop": "^0.3.2"
   }
 }
