@@ -1,4 +1,5 @@
 import * as ui from "hyperoop";
+import Hist from "redoundo";
 
 import "./index.scss";
 
@@ -21,7 +22,7 @@ const HistoryLength = 50;
 
 class Todo extends ui.Actions<ITodoState> {
     constructor(start: ITodoState) {
-        super(start, HistoryLength);
+        super(start, new Hist(HistoryLength));
     }
 
     get FilteredItems(): Item[] {
