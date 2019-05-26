@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import * as ui from "https://unpkg.com/hyperoop?module"
+
+        class Counter extends ui.Actions {}
+
+        const counter = new Counter({ count: 0 });
+
+        const view = () =>
+            ui.h("div", {}, [
+                ui.h("h1", {}, counter.State.count),
+                ui.h("button", { onclick: () => counter.State.count-- }, "-"),
+                ui.h("button", { onclick: () => counter.State.count++ }, "+")
+            ])
+
+        ui.init(document.body, view, counter);
+    </script>
+</body>
+</html>
